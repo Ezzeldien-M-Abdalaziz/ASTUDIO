@@ -1,145 +1,103 @@
+<h1>Job Portal API</h1>
+<h2>Project Overview</h2>
+<p>This project is a Laravel-based job portal API using Sanctum for authentication. It follows the Repository and Service Patterns for clean and maintainable code.</p>
 
-    <h1>Job Portal API</h1>
-    <p>This project is a Laravel-based job portal API using <strong>Sanctum</strong> for authentication. It follows the <strong>Repository Pattern</strong> and <strong>Service Pattern</strong> for clean and maintainable code.</p>
+<hr>
 
-    <h2>🚀 Features</h2>
-    <ul>
-        <li>User authentication with <strong>Laravel Sanctum</strong></li>
-        <li><strong>Repository and Service Patterns</strong> for clean architecture</li>
-        <li><strong>Job API</strong> with filtering, sorting, and searching</li>
-        <li><strong>Migrations, Factories, and Seeders</strong> for database setup</li>
-        <li>Well-documented API with <strong>Postman Collection</strong></li>
-    </ul>
+<h2>Features</h2>
+<h3>- User authentication with Laravel Sanctum</h3>
+<h3>- Repository and Service Patterns for clean architecture</h3>
+<h3>- Job API with filtering, sorting, and searching</h3>
+<h3>- Migrations, Factories, and Seeders for database setup</h3>
+<h3>- Well-documented API with Postman Collection</h3>
 
-    <h2>🛠️ Setup Instructions</h2>
-    <h3>1️⃣ Clone the Repository</h3>
-    <pre><code>git clone https://github.com/yourusername/job-portal-api.git
-cd job-portal-api</code></pre>
+<hr>
 
-    <h3>2️⃣ Install Dependencies</h3>
-    <pre><code>composer install</code></pre>
+<h2>Setup Instructions</h2>
+<h3>1. Clone the Repository</h3>
+<p>git clone https://github.com/yourusername/job-portal-api.git</p>
+<p>cd job-portal-api</p>
 
-    <h3>3️⃣ Set Up Environment</h3>
-    <pre><code>cp .env.example .env
-php artisan key:generate</code></pre>
-    <p>Update the <code>.env</code> file with your database credentials.</p>
+<h3>2. Install Dependencies</h3>
+<p>composer install</p>
 
-    <h3>4️⃣ Run Migrations and Seeders</h3>
-    <pre><code>php artisan migrate --seed</code></pre>
+<h3>3. Set Up Environment</h3>
+<p>cp .env.example .env</p>
+<p>php artisan key:generate</p>
+<p>Update the .env file with your database credentials.</p>
 
-    <h3>5️⃣ Serve the Application</h3>
-    <pre><code>php artisan serve</code></pre>
+<h3>4. Run Migrations and Seeders</h3>
+<p>php artisan migrate --seed</p>
 
-    <h2>🔑 Authentication</h2>
-    <h3>Default Admin Credentials</h3>
-    <ul>
-        <li><strong>Email:</strong> ezz@example.com</li>
-        <li><strong>Password:</strong> password</li>
-    </ul>
+<h3>5. Serve the Application</h3>
+<p>php artisan serve</p>
 
-    <h3>Login API</h3>
-    <p><strong>Endpoint:</strong> <code>POST /api/login</code></p>
-    <pre><code>{
-  "email": "ezz@example.com",
-  "password": "password"
-}</code></pre>
+<hr>
 
-    <h3>Response:</h3>
-    <pre><code>{
-  "token": "your-access-token"
-}</code></pre>
-    <p>Use the token for authenticated requests by adding it to the <code>Authorization</code> header:</p>
-    <pre><code>Authorization: Bearer your-access-token</code></pre>
+<h2>Authentication</h2>
+<h3>Default Admin Credentials</h3>
+<h3>Email: ezz@example.com</h3>
+<h3>Password: password</h3>
 
-    <h2>📌 API Endpoints</h2>
-    <table>
-        <tr>
-            <th>Method</th>
-            <th>Endpoint</th>
-            <th>Description</th>
-            <th>Auth Required</th>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/api/register</td>
-            <td>Register a new user</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/api/login</td>
-            <td>Login and get token</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/api/logout</td>
-            <td>Logout user</td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td>GET</td>
-            <td>/api/jobs</td>
-            <td>Get job listings</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>GET</td>
-            <td>/api/jobs/{id}</td>
-            <td>Get job details</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/api/jobs</td>
-            <td>Create a new job</td>
-            <td>✅ (Admin)</td>
-        </tr>
-        <tr>
-            <td>PUT</td>
-            <td>/api/jobs/{id}</td>
-            <td>Update a job</td>
-            <td>✅ (Admin)</td>
-        </tr>
-        <tr>
-            <td>DELETE</td>
-            <td>/api/jobs/{id}</td>
-            <td>Delete a job</td>
-            <td>✅ (Admin)</td>
-        </tr>
-    </table>
+<h3>Login API</h3>
+<h3>Endpoint: POST /api/login</h3>
 
-    <h2>🔍 Filtering and Searching</h2>
-    <p>You can filter jobs using query parameters:</p>
-    <pre><code>GET /api/jobs?filter[title]=developer&filter[company_name]=Google</code></pre>
+<h3>Request Body:</h3>
+<p>{ "email": "ezz@example.com", "password": "password" }</p>
 
-    <h3>Available Filters:</h3>
-    <ul>
-        <li><code>title</code> (partial match)</li>
-        <li><code>company_name</code> (partial match)</li>
-        <li><code>salary_min</code> / <code>salary_max</code> (<code>></code>, <code><</code>, <code>>=</code>, <code><=</code>)</li>
-        <li><code>is_remote</code>, <code>status</code>, <code>job_type</code> (exact match)</li>
-        <li><code>published_at</code>, <code>created_at</code> (date comparisons)</li>
-        <li><code>locations</code>, <code>languages</code>, <code>categories</code> (relationship filters)</li>
-    </ul>
+<h3>Response:</h3>
+<p>{ "token": "your-access-token" }</p>
 
-    <h2>📄 API Documentation & Postman Collection</h2>
-    <p>A <strong>Postman Collection</strong> is included for easy testing.</p>
-    <p>Import the file: <code>postman_collection.json</code> into Postman.</p>
+<h3>Use the token for authenticated requests:</h3>
+<p>Authorization: Bearer your-access-token</p>
 
-    <h2>🤔 Assumptions & Design Decisions</h2>
-    <ul>
-        <li>Used <strong>Laravel Sanctum</strong> for API authentication</li>
-        <li>Followed <strong>Repository & Service Patterns</strong> for maintainability</li>
-        <li>Applied <strong>Eloquent Relationships</strong> for job attributes</li>
-        <li>Implemented <strong>EAV model for dynamic job attributes</strong></li>
-        <li>Seeded database with <strong>factories for testing purposes</strong></li>
-    </ul>
+<hr>
 
-    <h2>📜 License</h2>
-    <p>This project is licensed under the MIT License.</p>
+<h2>API Endpoints</h2>
+<h3>POST /api/register - Register a new user</h3>
+<h3>POST /api/login - Login and get token</h3>
+<h3>POST /api/logout - Logout user (requires authentication)</h3>
+<h3>GET /api/jobs - Get job listings</h3>
+<h3>GET /api/jobs/{id} - Get job details</h3>
+<h3>POST /api/jobs - Create a new job (Admin only)</h3>
+<h3>PUT /api/jobs/{id} - Update a job (Admin only)</h3>
+<h3>DELETE /api/jobs/{id} - Delete a job (Admin only)</h3>
 
-    <h2>💡 Author</h2>
-    <p><strong>Ezzeldien</strong><br>
-    GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
+<hr>
 
+<h2>Filtering and Searching</h2>
+<h3>Example:</h3>
+<h3>GET /api/jobs?filter[title]=developer&filter[company_name]=Google</h3>
+
+<h3>Available Filters:</h3>
+<h3>- title (partial match)</h3>
+<h3>- company_name (partial match)</h3>
+<h3>- salary_min / salary_max (comparisons)</h3>
+<h3>- is_remote, status, job_type (exact match)</h3>
+<h3>- published_at, created_at (date comparisons)</h3>
+<h3>- locations, languages, categories (relationship filters)</h3>
+
+<hr>
+
+<h2>API Documentation & Postman Collection</h2>
+<h3>A Postman Collection is included for testing.</h3>
+<h3>Import the file: postman_collection.json into Postman.</h3>
+
+<hr>
+
+<h2>Assumptions & Design Decisions</h2>
+<h3>- Used Laravel Sanctum for API authentication</h3>
+<h3>- Followed Repository & Service Patterns for maintainability</h3>
+<h3>- Applied Eloquent Relationships for job attributes</h3>
+<h3>- Seeded database with factories for testing purposes</h3>
+
+<hr>
+
+<h2>License</h2>
+<h3>This project is licensed under the MIT License.</h3>
+
+<hr>
+
+<h2>Author</h2>
+<h3><strong>Ezzeldien</strong></h3>
+<h3>GitHub: <a href="https://github.com/yourusername">yourusername</a></h3>
