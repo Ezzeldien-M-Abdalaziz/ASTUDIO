@@ -91,13 +91,4 @@
 <h3>- Applied Eloquent Relationships for job attributes</h3>
 <h3>- Seeded database with factories for testing purposes</h3>
 
-<hr>
 
-<h2>License</h2>
-<h3>This project is licensed under the MIT License.</h3>
-
-<hr>
-
-<h2>Author</h2>
-<h3><strong>Ezzeldien</strong></h3>
-<h3>GitHub: <a href="https://github.com/yourusername">yourusername</a></h3>
