@@ -53,22 +53,6 @@
 
 <hr>
 
-<h2>API Endpoints</h2>
-<h3>POST /api/register - Register a new user</h3>
-<h3>POST /api/login - Login and get token</h3>
-<h3>POST /api/logout - Logout user (requires authentication)</h3>
-<h3>GET /api/jobs - Get job listings</h3>
-<h3>GET /api/jobs/{id} - Get job details</h3>
-<h3>POST /api/jobs - Create a new job (Admin only)</h3>
-<h3>PUT /api/jobs/{id} - Update a job (Admin only)</h3>
-<h3>DELETE /api/jobs/{id} - Delete a job (Admin only)</h3>
-
-<hr>
-
-<h2>Filtering and Searching</h2>
-<h3>Example:</h3>
-<h3>GET /api/jobs?filter[title]=developer&filter[company_name]=Google</h3>
-
 <h3>Available Filters:</h3>
 <h3>- title (partial match)</h3>
 <h3>- company_name (partial match)</h3>
