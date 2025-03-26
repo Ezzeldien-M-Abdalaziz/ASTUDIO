@@ -1,66 +1,198 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f8f8f8;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div class="container">
+    <h1>Job Portal API</h1>
+    <p>This project is a Laravel-based job portal API using <strong>Sanctum</strong> for authentication. It follows the <strong>Repository Pattern</strong> and <strong>Service Pattern</strong> for clean and maintainable code.</p>
 
-## About Laravel
+    <h2>🚀 Features</h2>
+    <ul>
+        <li>User authentication with <strong>Laravel Sanctum</strong></li>
+        <li><strong>Repository and Service Patterns</strong> for clean architecture</li>
+        <li><strong>Job API</strong> with filtering, sorting, and searching</li>
+        <li><strong>Migrations, Factories, and Seeders</strong> for database setup</li>
+        <li>Well-documented API with <strong>Postman Collection</strong></li>
+    </ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    <h2>🛠️ Setup Instructions</h2>
+    <h3>1️⃣ Clone the Repository</h3>
+    <pre><code>git clone https://github.com/yourusername/job-portal-api.git
+cd job-portal-api</code></pre>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    <h3>2️⃣ Install Dependencies</h3>
+    <pre><code>composer install</code></pre>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    <h3>3️⃣ Set Up Environment</h3>
+    <pre><code>cp .env.example .env
+php artisan key:generate</code></pre>
+    <p>Update the <code>.env</code> file with your database credentials.</p>
 
-## Learning Laravel
+    <h3>4️⃣ Run Migrations and Seeders</h3>
+    <pre><code>php artisan migrate --seed</code></pre>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    <h3>5️⃣ Serve the Application</h3>
+    <pre><code>php artisan serve</code></pre>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    <h2>🔑 Authentication</h2>
+    <h3>Default Admin Credentials</h3>
+    <ul>
+        <li><strong>Email:</strong> ezz@example.com</li>
+        <li><strong>Password:</strong> password</li>
+    </ul>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    <h3>Login API</h3>
+    <p><strong>Endpoint:</strong> <code>POST /api/login</code></p>
+    <pre><code>{
+  "email": "ezz@example.com",
+  "password": "password"
+}</code></pre>
 
-## Laravel Sponsors
+    <h3>Response:</h3>
+    <pre><code>{
+  "token": "your-access-token"
+}</code></pre>
+    <p>Use the token for authenticated requests by adding it to the <code>Authorization</code> header:</p>
+    <pre><code>Authorization: Bearer your-access-token</code></pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    <h2>📌 API Endpoints</h2>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+            <th>Auth Required</th>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/register</td>
+            <td>Register a new user</td>
+            <td>❌</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/login</td>
+            <td>Login and get token</td>
+            <td>❌</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/logout</td>
+            <td>Logout user</td>
+            <td>✅</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/jobs</td>
+            <td>Get job listings</td>
+            <td>❌</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/jobs/{id}</td>
+            <td>Get job details</td>
+            <td>❌</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/api/jobs</td>
+            <td>Create a new job</td>
+            <td>✅ (Admin)</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>/api/jobs/{id}</td>
+            <td>Update a job</td>
+            <td>✅ (Admin)</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>/api/jobs/{id}</td>
+            <td>Delete a job</td>
+            <td>✅ (Admin)</td>
+        </tr>
+    </table>
 
-### Premium Partners
+    <h2>🔍 Filtering and Searching</h2>
+    <p>You can filter jobs using query parameters:</p>
+    <pre><code>GET /api/jobs?filter[title]=developer&filter[company_name]=Google</code></pre>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    <h3>Available Filters:</h3>
+    <ul>
+        <li><code>title</code> (partial match)</li>
+        <li><code>company_name</code> (partial match)</li>
+        <li><code>salary_min</code> / <code>salary_max</code> (<code>></code>, <code><</code>, <code>>=</code>, <code><=</code>)</li>
+        <li><code>is_remote</code>, <code>status</code>, <code>job_type</code> (exact match)</li>
+        <li><code>published_at</code>, <code>created_at</code> (date comparisons)</li>
+        <li><code>locations</code>, <code>languages</code>, <code>categories</code> (relationship filters)</li>
+    </ul>
 
-## Contributing
+    <h2>📄 API Documentation & Postman Collection</h2>
+    <p>A <strong>Postman Collection</strong> is included for easy testing.</p>
+    <p>Import the file: <code>postman_collection.json</code> into Postman.</p>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    <h2>🤔 Assumptions & Design Decisions</h2>
+    <ul>
+        <li>Used <strong>Laravel Sanctum</strong> for API authentication</li>
+        <li>Followed <strong>Repository & Service Patterns</strong> for maintainability</li>
+        <li>Applied <strong>Eloquent Relationships</strong> for job attributes</li>
+        <li>Implemented <strong>EAV model for dynamic job attributes</strong></li>
+        <li>Seeded database with <strong>factories for testing purposes</strong></li>
+    </ul>
 
-## Code of Conduct
+    <h2>📜 License</h2>
+    <p>This project is licensed under the MIT License.</p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    <h2>💡 Author</h2>
+    <p><strong>Ezzeldien</strong><br>
+    GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
+</div>
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+</body>
+</html>
