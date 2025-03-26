@@ -16,4 +16,3 @@ Route::middleware('auth:sanctum')->group(function () {
 
 });
 
-hi
