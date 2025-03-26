@@ -14,5 +14,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/jobs', [JobController::class, 'index']);
 
+
+    Route::post('/logout', [UserController::class, 'logout']);
+
 });
 

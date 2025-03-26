@@ -2,7 +2,9 @@
 
 namespace App\Repositories;
 
+use App\Models\Job;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserRepository implements UserRepositoryInterface
 {
@@ -20,4 +22,11 @@ class UserRepository implements UserRepositoryInterface
     {
         return User::where('name', $name)->first();
     }
+
+    public function logout(): void{
+        $User = Auth::user();
+        $User->tokens()->delete();
+    }
+
+
 }

@@ -45,6 +45,15 @@ class UserController extends Controller
     }
 
 
+    public function logout(){
+        $this->userService->logout();
+
+        return response()->json([
+            'message' => 'Logout successful',
+            'status' => 'success',
+        ],200);
+    }
+
 
 
 }

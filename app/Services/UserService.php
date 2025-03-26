@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\UserRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Log;
@@ -33,6 +34,13 @@ class UserService
 
         $token = $user->createToken('auth_token', ['user'])->plainTextToken;
         return $token;
+    }
+
+
+
+    public function logout(){
+        $user = Auth::user();
+        $user->tokens()->delete();
     }
 
 

@@ -20,5 +20,7 @@ class JobController
         $jobs = $this->jobFilterService->applyFilters($request)->get();
         return response()->json($jobs);
     }
+
+
 }
 
