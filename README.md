@@ -15,7 +15,7 @@
 
 <h2>Setup Instructions</h2>
 <h3>1. Clone the Repository</h3>
-<p>git clone https://github.com/yourusername/job-portal-api.git</p>
+<p>git clone https://github.com/Ezzeldien-M-Abdalaziz/ASTUDIO.git</p>
 <p>cd job-portal-api</p>
 
 <h3>2. Install Dependencies</h3>
