@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal API Documentation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background: #f8f8f8;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-        }
-    </style>
-</head>
-<body>
 
-<div class="container">
     <h1>Job Portal API</h1>
     <p>This project is a Laravel-based job portal API using <strong>Sanctum</strong> for authentication. It follows the <strong>Repository Pattern</strong> and <strong>Service Pattern</strong> for clean and maintainable code.</p>
 
@@ -192,7 +142,4 @@ php artisan key:generate</code></pre>
     <h2>💡 Author</h2>
     <p><strong>Ezzeldien</strong><br>
     GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-</div>
 
-</body>
-</html>
