@@ -33,7 +33,6 @@
 <p>php artisan serve</p>
 
 <hr>
-<hr>
 
 <h2>Authentication</h2>
 <h3>Default Admin Credentials</h3>
