@@ -11,7 +11,7 @@
 <h3>- Migrations, Factories, and Seeders for database setup</h3>
 <h3>- Well-documented API with Postman Collection</h3>
 
-<hr>
+<hr><hr>
 
 <h2>Setup Instructions</h2>
 <h3>1. Clone the Repository</h3>
